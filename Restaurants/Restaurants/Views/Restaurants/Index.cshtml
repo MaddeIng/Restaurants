@@ -1,0 +1,35 @@
+﻿@model RestaurantsIndexVM[]
+
+@{
+    ViewBag.Title = "Restauranger";
+    ViewBag.H1 = "Restauranger";
+}
+
+@section style{
+    <link href="~/CSS/MyStylecss.css" rel="stylesheet" />
+}
+
+<ul class="indexList">
+    @foreach (var item in Model)
+    {
+        if (item.PriceRange <= 150 || item.PriceRange >= 0)
+        {
+            string b = "$";
+            <li>@item.Name <span class="l1">@b</span></li>
+            <ul><li>@item.WebbPage</li></ul>
+        }
+        else if (item.PriceRange <= 250)
+        {
+            string m = "$$";
+            <li>@item.Name <span class="l2">@m</span></li>
+            <ul><li>@item.WebbPage</li></ul>
+        }
+        else
+        {
+            string d = "$$$";
+            <li>@item.Name <span class="l3">@d</span></li>
+            <ul><li>@item.WebbPage</li></ul>
+        }
+    }
+</ul>
+

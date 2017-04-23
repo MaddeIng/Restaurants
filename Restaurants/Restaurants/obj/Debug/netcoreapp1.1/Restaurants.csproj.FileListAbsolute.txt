@@ -1,0 +1,9 @@
+C:\ProjectsVS\OwnProjects\Restaurants\Restaurants\bin\Debug\netcoreapp1.1\Restaurants.deps.json
+C:\ProjectsVS\OwnProjects\Restaurants\Restaurants\bin\Debug\netcoreapp1.1\Restaurants.runtimeconfig.json
+C:\ProjectsVS\OwnProjects\Restaurants\Restaurants\bin\Debug\netcoreapp1.1\Restaurants.runtimeconfig.dev.json
+C:\ProjectsVS\OwnProjects\Restaurants\Restaurants\bin\Debug\netcoreapp1.1\Restaurants.dll
+C:\ProjectsVS\OwnProjects\Restaurants\Restaurants\bin\Debug\netcoreapp1.1\Restaurants.pdb
+C:\ProjectsVS\OwnProjects\Restaurants\Restaurants\obj\Debug\netcoreapp1.1\Restaurants.csprojResolveAssemblyReference.cache
+C:\ProjectsVS\OwnProjects\Restaurants\Restaurants\obj\Debug\netcoreapp1.1\Restaurants.AssemblyInfo.cs
+C:\ProjectsVS\OwnProjects\Restaurants\Restaurants\obj\Debug\netcoreapp1.1\Restaurants.dll
+C:\ProjectsVS\OwnProjects\Restaurants\Restaurants\obj\Debug\netcoreapp1.1\Restaurants.pdb
