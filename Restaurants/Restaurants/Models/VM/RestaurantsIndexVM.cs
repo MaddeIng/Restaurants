@@ -16,5 +16,8 @@ namespace Restaurants.Models.VM
 
         [Display(Name = "Hemsida")]
         public string WebbPage { get; set; }
+
+        public string DisplayCssClass { get; set; }
+        public string DisplayCurrencySign { get; set; }
     }
 }

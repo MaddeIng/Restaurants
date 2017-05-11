@@ -31,6 +31,24 @@ namespace Restaurants.Models.Entities
             this.SaveChanges();
         }
 
+        private string GetCssClassByPriceRange(int priceRange)
+        {
+            if (priceRange >= 0 && priceRange <= 150)
+                return "green";
+            if (priceRange <= 250)
+                return "orange";
+            return "red";
+        }
+
+        private string GetCurrencySignByPriceRange(int priceRange)
+        {
+            if (priceRange >= 0 && priceRange <= 150)
+                return "$";
+            if (priceRange <= 250)
+                return "$$";
+            return "$$$";
+        }
+
         public async Task<RestaurantsIndexVM[]> ListRestaurantsAsync()
         {
             return await Restaurant
@@ -38,40 +56,24 @@ namespace Restaurants.Models.Entities
                 {
                     Name = r.Name,
                     WebbPage = r.WebbPage,
-                    PriceRange = r.PriceRange
+                    PriceRange = r.PriceRange,
+                    DisplayCssClass = GetCssClassByPriceRange(r.PriceRange),
+                    DisplayCurrencySign = GetCurrencySignByPriceRange(r.PriceRange)
                 }).ToArrayAsync();
         }
 
-        public string DisplayValue(int priceRange)
-        {
-            if (priceRange <= 150 || priceRange >= 0)
-            {
-                return $"$";
-            }
-            else if (priceRange <= 250)
-            {
-                return $"$$";
-            }
-            else
-            {
-                return $"$$$";
-            }
-        }
 
-        public string DisplayColor(int priceRange)
+        public RestaurantsIndexVM[] GetRestaurantsViewModel(string foodType)
         {
-            if (priceRange <= 150 || priceRange >= 0)
-            {
-                return "green";
-            }
-            else if (priceRange <= 250)
-            {
-                return "orange";
-            }
-            else
-            {
-                return "red";
-            }
+            return Restaurant
+                .Where(r => r.FoodType == foodType)
+                .Select(r => new RestaurantsIndexVM
+                {
+                    Name = r.Name,
+                    WebbPage = r.WebbPage,
+                    PriceRange = r.PriceRange
+                })
+                .ToArray();
         }
 
         public async Task<RestaurantsInfoVM[]> ListRestaurantsInfoAsync()

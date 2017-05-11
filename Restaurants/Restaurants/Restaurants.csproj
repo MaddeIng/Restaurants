@@ -6,6 +6,8 @@
 
   <ItemGroup>
     <Content Include="wwwroot\CSS\MyStylecss.css" />
+    <Content Include="wwwroot\jquery-3.2.1.min.js" />
+    <Content Include="wwwroot\JS\MyScript.js" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Restaurants.Models.Entities;
 using Restaurants.Models.VM;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Restaurants.Controllers
 {
@@ -25,7 +26,18 @@ namespace Restaurants.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            return View();
+            var model = new RestaurantsCreateVM();
+            model.FoodTypeItems = new SelectListItem[]
+            {
+                new SelectListItem { Text = "Asiatiskt", Value = "1"},
+                new SelectListItem { Text = "Mellanöstern", Value = "2"},
+                new SelectListItem { Text = "Afrikanskt", Value = "3"},
+                new SelectListItem { Text = "Medelhav", Value = "4"},
+                new SelectListItem { Text = "Sydamerikanskt", Value = "5"},
+                new SelectListItem { Text = "Amerikanskt", Value = "6"},
+                new SelectListItem { Text = "Europeiskt", Value = "7"},
+            };
+            return View(model);
         }
 
         [HttpPost]
@@ -36,6 +48,13 @@ namespace Restaurants.Controllers
             else
                 context.AddRestaurant(viewModel);
             return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult GetPartialView(string id)
+        {
+            var viewModel = context.GetRestaurantsViewModel(id);
+
+            return PartialView("_RestaurantList1", viewModel);
         }
     }
 }

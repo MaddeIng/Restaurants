@@ -1,11 +1,11 @@
-﻿.l1{
+﻿.l1, .green{
     color: green;
 }
 
-.l2{
+.l2, .orange{
     color: orange;
 }
 
-.l3{
+.l3, .red{
     color: red;
 }

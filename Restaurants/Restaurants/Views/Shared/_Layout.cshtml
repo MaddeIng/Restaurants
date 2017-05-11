@@ -24,7 +24,21 @@
             <ul class="nav navbar-nav">
                 <li><a asp-controller="Restaurants" asp-action="Index">Index</a></li>
                 <li><a asp-controller="Restaurants" asp-action="Create">Lägg till Restaurang</a></li>
-            </ul>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Matkategori<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Asiatiskt</a></li>
+                        <li><a href="#">Mellanöstern</a></li>
+                        <li><a href="#">Afrikanskt</a></li>
+                        <li><a href="#">Medelhav</a></li>
+                        <li><a href="#">Sydamerikanskt</a></li>
+                        <li><a href="#">Amerikanskt</a></li>
+                        <li><a href="#">Europeiskt</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+</ul>
         </div>
     </nav>
 
@@ -33,6 +47,7 @@
     @RenderSection("script", false)
 
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.0.min.js"></script>
+    <script src="~/jquery-3.2.1.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>

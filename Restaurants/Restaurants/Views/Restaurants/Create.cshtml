@@ -13,7 +13,8 @@
     <br /><br />
 
     <label asp-for="FoodType"></label>
-    <input asp-for="FoodType" />
+    <select asp-for="FoodType"
+            asp-items="Model.FoodTypeItems"></select>
     <span asp-validation-for="FoodType"></span>
 
     <br /><br />

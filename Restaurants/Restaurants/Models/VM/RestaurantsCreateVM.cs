@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -11,6 +12,8 @@ namespace Restaurants.Models.VM
         [Display(Name = "Namn")]
         [Required(ErrorMessage = "Du måste ange namn på restaurangen")]
         public string Name { get; set; }
+
+        public SelectListItem[] FoodTypeItems { get; set; }
 
         [Display(Name = "Typ av restaurang")]
         [Required(ErrorMessage = "Du måste ange restaurangtyp")]
@@ -32,6 +35,7 @@ namespace Restaurants.Models.VM
         public string PhoneNumber { get; set; }
 
         [Display(Name = "E-mail")]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
         [Display(Name = "Hemsida")]
